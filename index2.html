@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="shortcut icon" href="./vr/images/icons/favicon.ico">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/three@0.131.3/examples/js/loaders/TDSLoader.js"></script></script>
+</head>
+<body>
+    <a-scene stats loading-screen="dotsColor: gray; backgroundColor: lightgray">
+        
+        <!-- 空間と環境 -->
+        <a-sky color="#ECECEC"></a-sky>
+        <a-entity environment="preset: default; dressingAmount: 30"></a-entity>
+
+        <!-- アセット -->
+        <a-assets timeout="30000">
+            <!-- ローカルOBJモデルの定義 -->
+            <a-asset-item id="grass-obj" src="http://172.20.10.6:8080/path/to/grass.obj"></a-asset-item>
+        </a-assets>
+
+        <!-- OBJモデルの表示 -->
+        <a-obj-model src="#grass-obj"></a-obj-model>
+        
+    </a-scene>
+</body>
+</html>
